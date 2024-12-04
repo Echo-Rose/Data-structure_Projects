@@ -15,3 +15,5 @@
 
 * P-8.py stands alone. It is runnable without any other files.
 * P-9.py stands alone. It is runnable without any other files.
+
+* P-10.py stands alone. It is runnable without any other files.
