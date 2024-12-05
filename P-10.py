@@ -14,7 +14,7 @@ def selection_sort(arr):
                 min_idx = j
         if min_idx != i:
             arr[i], arr[min_idx] = arr[min_idx], arr[i]
-            movements += 2
+            movements += 3
     return arr, comparisons, movements
 
 def insertion_sort(arr):
@@ -42,7 +42,7 @@ def bubble_sort(arr):
             comparisons += 1
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
-                movements += 2
+                movements += 3
     return arr, comparisons, movements
 
 def shell_sort(arr):
@@ -79,7 +79,7 @@ def heapify(arr, n, i, comp_mov):
         comparisons += 1
     if largest != i:
         arr[i], arr[largest] = arr[largest], arr[i]
-        movements += 2
+        movements += 3
         arr, comp_mov = heapify(arr, n, largest, (comparisons, movements))
     return arr, (comparisons, movements)
 
@@ -91,7 +91,7 @@ def heap_sort(arr):
         arr, (comparisons, movements) = heapify(arr, n, i, (comparisons, movements))
     for i in range(n - 1, 0, -1):
         arr[i], arr[0] = arr[0], arr[i]
-        movements += 2
+        movements += 3
         arr, (comparisons, movements) = heapify(arr, i, 0, (comparisons, movements))
     return arr, comparisons, movements
 
@@ -156,11 +156,11 @@ def partition(arr, left, right, comparisons, movements):
             comparisons[0] += 1
         if low <= high:
             arr[low], arr[high] = arr[high], arr[low]
-            movements[0] += 2
+            movements[0] += 3
         else:
             break
     arr[left], arr[high] = arr[high], arr[left]
-    movements[0] += 2
+    movements[0] += 3
     return high
 
 
@@ -188,4 +188,4 @@ if __name__ == "__main__":
     else:
         print("Invalid sorting algorithm choice.")
 
-# Data List test : 1, 3, 4, 5, 8
+# Data List test : 5, 7, 8, 3, 1, 9, 6
